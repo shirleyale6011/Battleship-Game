@@ -40,8 +40,15 @@ public class Battleship {
     public static void ships() {
         Scanner input = new Scanner(System.in);
         for (int number = 1; number <= 3; number++)
-        System.out.printf("Enter the corinates to ship %d: ", number);
-        String shipplacement = input.next();
+            
+            System.out.printf("Enter the corinates to ship %d: ", number);
+        
+        String rowInput = input.next().toUpperCase(); 
+        char rowLetter = rowInput.charAt(0);
+        int rowIndex = rowLetter - 'A'; 
+        int colIndex = input.nextInt() - 1;
+        int finalIndex = (rowIndex * 10) + colIndex;
+        //layout[finalIndex] = number;
 
         input.close();
     }  
